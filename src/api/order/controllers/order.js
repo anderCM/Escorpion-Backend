@@ -10,12 +10,11 @@ async function createPayment(allInfo) {
   const url = "https://api.mercadopago.com/checkout/preferences";
 
   const preference = {
-    /* payer_email: "test_user_32130191@testuser.com", */
     payer: {
       phone: {
         number: allInfo.addressShipping.phone,
       },
-      email: "test_user_32130191@testuser.com",
+      email: allInfo.email,
     },
     items: allInfo.items,
     payment_methods: {
@@ -53,7 +52,7 @@ async function createPayment(allInfo) {
     const payment = await axios.post(url, preference, {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.ACCESS_TOKEN}`,
+        Authorization: `Bearer ${process.env.MP_ACCESS_TOKEN}`,
       },
     });
 
@@ -95,6 +94,7 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
         idPayment: idPayment,
         addressShipping: addressShipping.attributes,
         delivered: "Pendiente",
+        publishedAt: new Date(),
       };
       const entry = await strapi.db.query("api::order.order").create({
         data,

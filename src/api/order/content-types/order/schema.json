@@ -46,6 +46,7 @@
       "type": "enumeration",
       "enum": [
         "Entregado",
+        "Enviado",
         "Pendiente"
       ],
       "default": "Pendiente",

@@ -1,17 +1,17 @@
-/* module.exports = ({ env }) => ({
+module.exports = ({ env }) => ({
   connection: {
     client: 'mysql',
     connection: {
-      host: env('DATABASE_HOST', 'escorpion-db.csogxxv5r9m2.us-east-1.rds.amazonaws.com'),
+      host: env('DATABASE_HOST', '34.67.0.249'),
       port: env.int('DATABASE_PORT', 3306),
-      database: env('DATABASE_NAME', 'e-commerce'),
-      user: env('DATABASE_USERNAME', 'anderson_dev'),
-      password: env('DATABASE_PASSWORD', '3SC0RP10N$$'),
+      database: env('DATABASE_NAME', 'db-e-commerce'),
+      user: env('DATABASE_USERNAME', 'admin_escorpion'),
+      password: env('DATABASE_PASSWORD', '3SC0RP10Ns$$'),
       ssl: env.bool('DATABASE_SSL', true),
     },
   },
-}); */
-module.exports = ({ env }) => ({
+});
+/* module.exports = ({ env }) => ({
   connection: {
     client: 'mysql',
     connection: {
@@ -23,4 +23,4 @@ module.exports = ({ env }) => ({
       //ssl: env.bool('DATABASE_SSL', true),
     },
   },
-});
+}); */

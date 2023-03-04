@@ -6,21 +6,15 @@ module.exports = [
         useDefaults: true,
         directives: {
           'connect-src': ["'self'", 'https:'],
-          'img-src': ["'self'", 'data:', 'blob:', 'https://storage.googleapis.com','https://dl.airtable.com'],
-          'media-src': ["'self'", 'data:', 'blob:', 'https://storage.googleapis.com','https://dl.airtable.com'],
+          'img-src': ["'self'", 'data:', 'blob:', 'storage.googleapis.com'],
+          'media-src': ["'self'", 'data:', 'blob:', 'storage.googleapis.com'],
           upgradeInsecureRequests: null,
         },
       },
     },
-  },
-  {
-    name: 'strapi::cors',
-    config: {
-      enabled: true,
-      headers: '*',
-      origin: ['https://www.reyescorpionperu.com','http://127.0.0.2:1337']
-    }
-  },
+ },
+  'strapi::security',
+  'strapi::cors',
   'strapi::poweredBy',
   'strapi::logger',
   'strapi::query',
